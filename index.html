@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <title>股票交易記錄</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input, .form-group select, .form-group button {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .form-group button {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+        .form-group button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>股票交易記錄</h1>
+        <div class="form-group">
+            <label for="entryDate">進場日期</label>
+            <input type="date" id="entryDate">
+        </div>
+        <div class="form-group">
+            <label for="entryTime">進場時間</label>
+            <input type="time" id="entryTime">
+        </div>
+        <div class="form-group">
+            <label for="entryPosition">進場位置</label>
+            <input type="text" id="entryPosition">
+        </div>
+        <div class="form-group">
+            <label for="targetPosition">預計停損位置</label>
+            <input type="text" id="targetPosition">
+        </div>
+        <div class="form-group">
+            <label for="direction">方向</label>
+            <select id="direction">
+                <option value="long">多單</option>
+                <option value="short">空單</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="exitDate">出場日期</label>
+            <input type="date" id="exitDate">
+        </div>
+        <div class="form-group">
+            <label for="exitTime">出場時間</label>
+            <input type="time" id="exitTime">
+        </div>
+        <div class="form-group">
+            <button onclick="saveData()">保存</button>
+        </div>
+        <h2>處理要疑顯的交易</h2>
+        <ul id="transactionList"></ul>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
